@@ -1,1 +1,6 @@
 /* Estilos aqui */
+
+body {
+    background-color: aqua;
+    border: 2px solid red;
+}
