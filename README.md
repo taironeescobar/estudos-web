@@ -12,7 +12,7 @@ Este repositório foi criado para organizar todos os exercícios e desafios que 
 
 Abaixo, os links para acessar cada exercício diretamente:
 
-[📂 Index: Repositorio de acesso as atividades praticas](https://taironeescobar.github.io/estudos-web/)
+[📂 Index: Clique aqui para ver todos as atividades praticas](https://taironeescobar.github.io/estudos-web/)
 
 <!--
 ### Módulo 1 - Conceitos Básicos
