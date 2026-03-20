@@ -3,146 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
     <title>BikCraft</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        background-color: #f7f7f7;
-        font-family: Arial, Helvetica, sans-serif;
-        display: grid;
-        gap: 60px;
-        margin-top: 60px;
-        justify-items: center;
-      }
-
-      img {
-        display: block;
-        max-width: 100%;
-      }
-
-      p {
-        font-size: 1.25rem;
-        line-height: 1.3;
-      }
-
-      header {
-        display: grid;
-        gap: 60px;
-        justify-items: center;
-      }
-
-      .menu {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        list-style: none;
-        justify-content: center;
-      }
-      .menu a {
-        display: block;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: #000;
-        background-color: #fff;
-        padding: 1rem 2rem;
-        border-radius: 4px;
-        border: 2px solid transparent;
-        transition: 0.3s;
-      }
-
-      .menu a:hover {
-        border: 2px solid #e21;
-      }
-
-      .conteudo {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        max-width: 1000px;
-      }
-
-      .introducao {
-        background-color: #fff;
-        padding: 40px;
-        display: grid;
-        gap: 20px;
-        text-align: right;
-        justify-items: end;
-        align-items: center;
-      }
-
-      .introducao a {
-        display: block;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 1rem 2rem;
-        background: #e21;
-        color: #fff;
-        border-radius: 4px;
-      }
-
-      .introducao-cover img {
-        object-fit: cover;
-        height: 100%;
-      }
-      .subtitulo {
-        font-size: 4rem;
-        color: rgba(0, 0, 0, 0.2);
-        padding: 40px;
-        text-align: right;
-        align-self: center;
-        text-transform: uppercase;
-      }
-
-      .vantagens {
-        padding: 40px;
-        background-color: #fff;
-        list-style: none;
-      }
-
-      .subtitulo {
-        background-image: url(./img/onda.svg);
-      }
-
-      .vantagens-item {
-        display: grid;
-        padding: 20px;
-        grid-template-columns: auto 1fr;
-        gap: 10px 20px;
-      }
-
-      .vantagens-item p {
-        grid-column: 2;
-      }
-
-      footer {
-        padding: 40px;
-        /* font-size: 1.25rem; */
-        text-align: center;
-        background-color: #fff;
-        width: 100%;
-      }
-
-      @media (max-width: 1000px) {
-        .vantagens {
-          grid-template-columns: 1fr;
-        }
-
-        .subtitulo {
-          text-align: c;
-        }
-      }
-    </style>
   </head>
   <body>
-    <header>
-      <img src="./img/bikcraft.svg" alt="" />
+    <header class="header">
+      <img src="./img/bikcraft.svg" alt="Logomarca Bike Craft" />
       <nav>
-        <ul class="menu">
+        <ul class="header-menu">
           <li><a href="#">Sobre</a></li>
           <li><a href="#">Produtos</a></li>
           <li><a href="#">Loja</a></li>
@@ -152,41 +20,44 @@
     </header>
 
     <main>
-      <article class="conteudo">
+      <article class="main-row1">
         <div class="introducao">
-          <h1>Bicicletas Feitas a Mão</h1>
-          <p>A Nimbus Stark é a melhor Bikcraft já criada pela nossa equipe. Ela vem equipada com os melhores acessórios da marca.</p>
-          <a href="#">Ver Mais</a>
+          <h1 class="introducao-titulo">Bicicletas Feitas a Mão</h1>
+          <p class="introducao-texto">A Nimbus Stark é a melhor Bikcraft já criada pela nossa equipe. Ela vem equipada com os melhores acessórios da marca.</p>
+          <a href="#" class="introducao-link">Ver mais</a>
         </div>
         <div class="introducao-cover">
-          <img src="./img/bicicleta.jpg" alt="" />
+          <img src="./img/bicicleta.jpg" alt="Bicicleta Bikcraft modelo Nimbus Stark preta" />
         </div>
       </article>
 
-      <article class="vantagens">
+      <article class="main-row2">
         <h2 class="subtitulo">Vantagens Bikcraft</h2>
+
         <ul class="vantagens">
           <li class="vantagens-item">
             <img src="./img/eletrica.svg" alt="" />
             <h3>Motor Elétrico</h3>
-            <p>Permite você viajar distâncias inimaginaveis com a sua bike.</p>
+            <p class="vantagens-texto">Permite você viajar distâncias inimaginaveis com a sua bike.</p>
           </li>
 
           <li class="vantagens-item">
             <img src="./img/velocidade.svg" alt="" />
             <h3>40 km/h</h3>
-            <p>A mais rápida bicicleta elétrica disponível hoje no mercado.</p>
+            <p class="vantagens-texto">A mais rápida bicicleta elétrica disponível hoje no mercado.</p>
           </li>
 
           <li class="vantagens-item">
             <img src="./img/rastreador.svg" alt="" />
             <h3>Rastreador</h3>
-            <p>Rastreador e sistema anti-furto para garantir o seu sossego.</p>
+            <p class="vantagens-texto">Rastreador e sistema anti-furto para garantir o seu sossego.</p>
           </li>
         </ul>
       </article>
     </main>
 
-    <footer>Bikcraft. Alguns Direitos Reservados.</footer>
+    <footer class="footer">
+      <p>Bikcraft. Alguns Direitos Reservados.</p>
+    </footer>
   </body>
 </html>
