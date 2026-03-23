@@ -1,0 +1,162 @@
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --surface2: #272727;
+  --surface3: #3f3f3f;
+
+  --border: #303030;
+  --text: #f1f1f1;
+  --text-muted: #aaaaaa;
+  --accent: #ff0000;
+  --accent-hover: #cc0000;
+  --sidebar-w: 240px;
+  --header-h: 56px;
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #303030;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  gap: 5px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: 0.2s;
+}
+
+.hamburger:hover {
+  background-color: var(--surface2);
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+/* LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.logo img {
+  width: 35px;
+}
+
+/* HEADER SEARCH */
+.header-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 640px;
+  margin: 0 40px;
+}
+
+.header-search input {
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 5px;
+  border: 1px solid var(--border);
+  font-size: 16px;
+  padding: 9px 16px;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  font-family: inherit;
+  flex: 1;
+}
+
+.header-search input:focus {
+  border-color: #1c62b9;
+}
+
+.search-btn {
+  width: 60px;
+  height: 39px;
+  border: 1px solid var(--border);
+  background-color: var(--surface2);
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+.search-btn:hover {
+  background-color: var(--surface3);
+  border: 1px solid var(--surface3);
+
+}
+
+.search-btn img {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+
+
+/* HEADER RIGHT */
+
+.header-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 90px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--surface2);
+  transition: 0.2s;
+}
+
+.create-btn:hover {
+  background-color: var(--surface3);
+}
+
+.create-btn-plus {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.notification-btn {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}

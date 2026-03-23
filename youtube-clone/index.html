@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <title>Youtube</title>
+    <style>
+      :root {
+        --bg: #0f0f0f;
+        --surface: #1a1a1a;
+        --surface2: #272727;
+        --surface3: #3f3f3f;
+        --border: #303030;
+        --text: #f1f1f1;
+        --text-muted: #aaaaaa;
+        --accent: #ff0000;
+        --accent-hover: #cc0000;
+        --sidebar-w: 240px;
+        --header-h: 56px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: "Roboto", sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--text);
+      }
+
+      /* HEADER */
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 30px;
+        border-bottom: 1px solid #303030;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      /* HAMBURGER */
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        gap: 5px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        transition: 0.2s;
+      }
+
+      .hamburger:hover {
+        background-color: var(--surface2);
+      }
+
+      .hamburger span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: #ffffff;
+        border-radius: 2px;
+      }
+
+      /* LOGO */
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 18px;
+      }
+
+      .logo img {
+        width: 35px;
+      }
+
+      /* HEADER SEARCH */
+      .header-search {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        max-width: 640px;
+        margin: 0 40px;
+      }
+
+      .header-search input {
+        background-color: var(--bg);
+        color: var(--text);
+        border: 1px solid var(--border);
+        font-size: 16px;
+        padding: 9px 16px;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+        font-family: inherit;
+        flex: 1;
+        caret-color: var(--text);
+      }
+
+      .header-search input:focus {
+        border-color: #1c62b9;
+      }
+
+      .search-btn {
+        width: 60px;
+        height: 39px;
+        border: 1px solid var(--border);
+        background-color: var(--surface2);
+        border-radius: 0 20px 20px 0;
+        cursor: pointer;
+      }
+      .search-btn:hover {
+        background-color: var(--surface3);
+        border: 1px solid var(--surface3);
+      }
+
+      .search-btn img {
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+      }
+
+      /* HEADER RIGHT */
+
+      .header-right {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .create-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 90px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: var(--surface2);
+        transition: 0.2s;
+        cursor: pointer;
+      }
+
+      .create-btn:hover {
+        background-color: var(--surface3);
+      }
+
+      .create-btn-plus {
+        font-size: 2.5rem;
+        font-weight: 300;
+      }
+
+      .notification-btn {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+      }
+
+      .profile-picture {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      /* MAIN */
+      main {
+        padding: 40px;
+      }
+
+      .section-title {
+        margin-bottom: 32px;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .shorts-row {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        margin-bottom: 32px;
+      }
+
+      .short-thumb {
+        position: relative;
+      }
+
+      .short-thumb img {
+        border-radius: 10px;
+        margin-bottom: 8px;
+        aspect-ratio: 9/16;
+      }
+      .short-thumb .duration {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 2px 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        bottom: 8px;
+        right: 8px;
+      }
+
+      /* VIDEOS SECTION */
+      .videos-row {
+        display: grid;
+        gap: 16px 12px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        margin-bottom: 32px;
+      }
+
+      .videos-thumb {
+        position: relative;
+      }
+
+      .videos-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        aspect-ratio: 16/9;
+      }
+      .videos-thumb .duration {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 2px 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        bottom: 8px;
+        right: 8px;
+      }
+
+      .videos-views, .short-views {
+        color: var(--text-muted);
+        font-size: 14px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <a class="logo" href="#">
+          <img src="./img/youtube.png" alt="" />
+          <span>Youtube</span>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <input type="search" placeholder="Pesquisar" />
+        <button class="search-btn"><img src="./img/search.png" alt="" /></button>
+      </div>
+
+      <div class="header-right">
+        <div class="create-btn">
+          <span class="create-btn-plus">+</span>
+          <span>Criar</span>
+        </div>
+        <img class="notification-btn" src="./img/notification.png" alt="" />
+        <img src="./img/profile-img.png" alt="" class="profile-picture" />
+      </div>
+    </header>
+
+    <main>
+      <div class="section-title">🩳 Shorts</div>
+      <div class="shorts-row">
+        <div class="short-card">
+          <div class="short-thumb">
+            <img src="https://picsum.photos/200/300" alt="Short" />
+            <div class="duration">0:45</div>
+          </div>
+          <div class="short-title">CSS tricks que você não conhecia</div>
+          <div class="short-views">2,1 mi de visualizações</div>
+        </div>
+
+        <div class="short-card">
+          <div class="short-thumb">
+            <img src="https://picsum.photos/200/301" alt="Short" />
+            <div class="duration">0:58</div>
+          </div>
+          <div class="short-title">Como a NASA fotografa o espaço</div>
+          <div class="short-views">4,8 mi de visualizações</div>
+        </div>
+
+        <div class="short-card">
+          <div class="short-thumb">
+            <img src="https://picsum.photos/200/302" alt="Short" />
+            <div class="duration">0:58</div>
+          </div>
+          <div class="short-title">Como a NASA fotografa o espaço</div>
+          <div class="short-views">4,8 mi de visualizações</div>
+        </div>
+
+        <div class="short-card">
+          <div class="short-thumb">
+            <img src="https://picsum.photos/200/303" alt="Short" />
+            <div class="duration">0:58</div>
+          </div>
+          <div class="short-title">Como a NASA fotografa o espaço</div>
+          <div class="short-views">4,8 mi de visualizações</div>
+        </div>
+
+        <div class="short-card">
+          <div class="short-thumb">
+            <img src="https://picsum.photos/200/304" alt="Short" />
+            <div class="duration">0:58</div>
+          </div>
+          <div class="short-title">Como a NASA fotografa o espaço</div>
+          <div class="short-views">4,8 mi de visualizações</div>
+        </div>
+      </div>
+
+      <!-- VÍDEOS -->
+      <div class="section-title">📺 Recomendados</div>
+      <div class="videos-row">
+        <div class="videos-card">
+          <div class="videos-thumb">
+            <img src="https://picsum.photos/200/305" alt="Short" />
+            <div class="duration">0:45</div>
+          </div>
+          <div class="videos-title">CSS tricks que você não conhecia</div>
+          <div class="videos-views">2,1 mi de visualizações</div>
+        </div>
+
+        <div class="videos-card">
+          <div class="videos-thumb">
+            <img src="https://picsum.photos/200/306" alt="Short" />
+            <div class="duration">0:45</div>
+          </div>
+          <div class="videos-title">CSS tricks que você não conhecia</div>
+          <div class="videos-views">2,1 mi de visualizações</div>
+        </div>
+
+        <div class="videos-card">
+          <div class="videos-thumb">
+            <img src="https://picsum.photos/200/307" alt="Short" />
+            <div class="duration">0:45</div>
+          </div>
+          <div class="videos-title">CSS tricks que você não conhecia</div>
+          <div class="videos-views">2,1 mi de visualizações</div>
+        </div>
+
+        <div class="videos-card">
+          <div class="videos-thumb">
+            <img src="https://picsum.photos/200/308" alt="Short" />
+            <div class="duration">0:45</div>
+          </div>
+          <div class="videos-title">CSS tricks que você não conhecia</div>
+          <div class="videos-views">2,1 mi de visualizações</div>
+        </div>
+
+        <div class="videos-card">
+          <div class="videos-thumb">
+            <img src="https://picsum.photos/200/309" alt="Short" />
+            <div class="duration">0:45</div>
+          </div>
+          <div class="videos-title">CSS tricks que você não conhecia</div>
+          <div class="videos-views">2,1 mi de visualizações</div>
+        </div>
+
+        <div class="videos-card">
+          <div class="videos-thumb">
+            <img src="https://picsum.photos/200/310" alt="Short" />
+            <div class="duration">0:45</div>
+          </div>
+          <div class="videos-title">CSS tricks que você não conhecia</div>
+          <div class="videos-views">2,1 mi de visualizações</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
